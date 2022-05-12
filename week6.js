@@ -14,3 +14,21 @@ function searchIt(array1, target){
     return -1;
 }
 
+function leastCoins(coinSizes, amount){
+    //sort coin sizes from greatest to least
+    coinSizes.sort();
+    coinSizes.reverse();
+    coinsNeeded = 0;
+    for(coin=0;coin<coinSizes.length;i+=1){
+        var divisions = Math.floor(amount/coin);
+        coinsNeeded += divisions;
+        var remainder = amount% coin;
+        amount = remainder; 
+    }
+    if(amount == 0){
+        return coinsNeeded;
+    }else{
+        return -1;
+    }
+
+}
